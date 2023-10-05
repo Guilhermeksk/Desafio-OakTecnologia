@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./img/forma-de-arvore-com-folhas.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./dist/output.css" />
+
+    <!--esse projeto esta em html e js, com a estilizaçao do tailwind e com firebase de banco de dados-->
+    <!--realizei esse projeto em 2, faço faculdade periodo noturno por isso nn conclui no mesmo dia!.-->
+
+    <title>Registro / Oak Tecnologia</title>
+  </head>
+  <body class="bg-gray-200">
+    <nav
+      class="absolute flex w-full flex-wrap items-center bg-[#FBFBFB] py-2 shadow-lg hover:text-neutral-700 focus:text-neutral-700 sm:w-full"
+    >
+      <div class="flex w-full flex-wrap px-3">
+        <div>
+          <span class="text-2xl text-black">
+            <a><span class="text-green-600">Oak</span> Tecnologia</a>
+          </span>
+          
+        </div>
+      </div>
+    </nav>
+    <!--fim da nav -->
+
+    <!--começo do meu corpo principal da aplicação-->
+    <div class="min-h-screen flex items-center justify-center">
+      <div class="mx-auto">
+        <h1 class="text-2xl font-medium text-center mb-3">Cadastro do produto</h1>
+        <div class="w-96 p-6 bg-white shadow-md rounded-md space-y-3">
+          <div>
+            <label class="block text-gray-800 mb-1" for="produto"
+              >Produto:</label
+            >
+            <input
+              class="py-1 px-4 w-full bg-gray-50 border border-gray-300 rounded-lg"
+              id="produto"
+              type="text"
+            />
+          </div>
+          <div>
+            <label class="block text-gray-800 mb-1" for="desc"
+              >Descrição:</label
+            >
+
+            <textarea
+              rows="2"
+              class="max-h-24 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              id="desc"
+              type="text"
+            ></textarea>
+          </div>
+          <div>
+            <label class="block text-gray-800 mb-1" for="produto">Valor:</label>
+            <input
+              class="py-1 px-4 w-28 bg-gray-50 border border-gray-300 rounded-lg"
+              id="valor"
+              type="number"
+              placeholder="R$ 0.00"
+            />
+          </div>
+          <div>
+            <label class="text-sm block text-gray-800 mb-1" for="produto"
+              >O Item esta disponivel para venda?</label
+            >
+            <div class="inline-block relative w-64">
+              <select
+                class="text-gray-600 block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option disabled selected hidden>Selecione uma opção</option>
+                <option>Sim</option>
+                <option>Não</option>
+              </select>
+              <div
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+              >
+                <svg
+                  class="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mt-1">
+            <button
+              class="w-full text-base bg-green-600 hover:bg-green-700 px-2 py-2 rounded-xl text-white"
+              onclick="cadastrar()"
+            >
+              Cadastrar
+            </button>
+            <div id="erro" class="mt-2">
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--fim do scopo principal-->
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+  <script src="./src/config.js"></script>
+  <script src="./src/Second.js"></script>
+</html>
